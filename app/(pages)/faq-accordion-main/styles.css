@@ -1,0 +1,142 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Purple-100: hsl(275, 100%, 97%);
+  --Purple-600: hsl(292, 16%, 49%);
+  --Purple-950: hsl(292, 42%, 14%);
+  --Purple-Hover: hsl(281, 83%, 54%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--Purple-950);
+  display: flex;
+  background: var(--White) url('./assets/images/background-pattern-mobile.svg') no-repeat fixed;
+  background-size: contain;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--White);
+  width: 370px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 46px -8px rgba(0, 0, 0, 0.5);
+  margin: auto;
+}
+
+/* CONTAINER */
+.container-title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  width: 100%;
+  padding: 20px 0px;
+}
+
+/* TITULOS */
+.accordion-label {
+  cursor: pointer;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.accordion-label::-webkit-details-marker {
+  display: none;
+}
+
+/* ICONOS */
+.accordion-item .accordion-label::after {
+  content: url('./assets/images/icon-plus.svg');
+}
+
+.accordion-item.active .accordion-label::after {
+  content: url('./assets/images/icon-minus.svg');
+}
+
+
+/* ANIMACIÓN DEL ACORDEÓN (CON GRID) */
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.5s ease-in-out;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+.accordion-item.active .accordion-content {
+  grid-template-rows: 1fr;
+  padding-top: 25px
+}
+
+/* ATTRIBUTION */
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.attribution a {
+  color: var(--Dark-Gray-Blue);
+  font-weight: 800;
+}
+
+@media (min-width: 430px) {
+  body {
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+  }
+
+  .main {
+    width: 580px;
+  }
+
+  .accordion-label {
+    align-items: flex-start;
+  }
+
+  .accordion-label:hover {
+    cursor: pointer;
+    color: var(--Purple-Hover);
+  }
+}

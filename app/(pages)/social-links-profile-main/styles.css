@@ -112,6 +112,12 @@ button {
     padding: 17px 0px;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--Green);
+    color: var(--Grey-700);
 }
 
 

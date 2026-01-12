@@ -74,11 +74,13 @@ p {
     border-radius: 5px;
     margin-bottom: 15px;
     background-color: var(--Yellow);
+    color: var(--Gray-950);
 }
 
 .published {
     display: inline-block;
     margin-bottom: 20px;
+    color: var(--Gray-950);
 }
 
 .text-container {
